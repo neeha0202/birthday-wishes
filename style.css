@@ -1,0 +1,292 @@
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(to bottom, #2c0101, #ff0000);
+  color: white;
+  text-align: center;
+}
+
+.container {
+  padding: 30px;
+}
+
+h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.time-segment {
+  background: #660000;
+  padding: 15px;
+  border-radius: 10px;
+  width: 80px;
+}
+
+.time-segment span {
+  display: block;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.card {
+  background: white;
+  border-radius: 15px;
+  padding: 10px;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card img {
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+}
+
+.reactions {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+button.like, button.dislike {
+  font-size: 1em;
+  background: #fff;
+  color: #000;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.features {
+  margin-top: 20px;
+}
+
+.features button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  font-weight: bold;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+}
+
+.balloons::before {
+  content: "🎈🎈🎈🎈🎈🎈";
+  font-size: 2rem;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: floatBalloons 10s ease-in-out infinite;
+  animation-delay: 0s;
+  opacity: 0.9;
+  text-shadow: 2px 2px 4px rgba(255, 0, 0, 0.4), -2px -2px 4px rgba(255, 255, 0, 0.4);
+  filter: hue-rotate(0deg);
+  animation: floatBalloons 12s linear infinite, hueShift 6s infinite alternate;
+}
+
+
+@keyframes floatBalloons {
+  0% { top: 100%; }
+  100% { top: -50px; }
+}
+
+/* Animation for title */
+#birthday-title {
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Light/Dark Mode Styles */
+body.light-mode {
+  background: linear-gradient(to bottom, #ffffff, #f8dede);
+  color: black;
+}
+
+body.light-mode .time-segment {
+  background: #ffdada;
+  color: black;
+}
+
+body.light-mode .card {
+  background: #fff8f8;
+}
+
+body.light-mode button {
+  background: #ffdada;
+  color: black;
+}
+.extras {
+  margin-top: 20px;
+}
+.extras button {
+  margin: 5px;
+  padding: 10px 20px;
+  font-weight: bold;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Popup */
+.popup {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.popup-content {
+  background: white;
+  color: black;
+  margin: 15% auto;
+  padding: 20px;
+  border-radius: 15px;
+  width: 300px;
+  text-align: center;
+  position: relative;
+}
+.close-btn {
+  position: absolute;
+  top: 10px; right: 20px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Confetti canvas */
+#confetti-canvas {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 99;
+}
+/* Glowing Title */
+#birthday-title {
+  animation: glow 2s ease-in-out infinite alternate;
+}
+@keyframes glow {
+  from { text-shadow: 0 0 10px #ff5ec3, 0 0 20px #ff5ec3; }
+  to { text-shadow: 0 0 20px #ff5ec3, 0 0 30px #ff2e9a; }
+}
+
+/* Image Card Hover Effect */
+.card {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.card:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 15px rgba(255, 94, 195, 0.4);
+}
+
+/* Progress Bar */
+.progress-container {
+  margin: 20px;
+  text-align: center;
+}
+.progress-bar {
+  width: 80%;
+  margin: 0 auto;
+  height: 20px;
+  background: #eee;
+  border-radius: 10px;
+  overflow: hidden;
+}
+#progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #ff5ec3, #ff2e9a);
+  transition: width 0.5s ease-in-out;
+}
+
+/* Wish Box */
+.send-wish {
+  text-align: center;
+  margin-top: 20px;
+}
+.wish-box {
+  margin-top: 10px;
+}
+.wish-box textarea {
+  width: 250px;
+  height: 80px;
+  border-radius: 10px;
+  padding: 10px;
+  resize: none;
+}
+.wish-box button {
+  margin-top: 10px;
+  padding: 8px 15px;
+  background-color: #ff5ec3;
+  border: none;
+  color: white;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.hidden {
+  display: none;
+}
+/* Floating Balloons */
+.float-balloon {
+  position: absolute;
+  bottom: -50px;
+  width: 30px;
+  height: 40px;
+  background: radial-gradient(circle, #ff5ec3 40%, #ff2e9a 100%);
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  animation: floatUp linear infinite;
+  z-index: 0;
+  opacity: 0.7;
+}
+@keyframes floatUp {
+  0% { transform: translateY(0); opacity: 0.7; }
+  100% { transform: translateY(-110vh); opacity: 0; }
+}
+@keyframes floatBalloons {
+  0% {
+    top: 100%;
+    transform: translateX(-50%) rotate(0deg);
+  }
+  50% {
+    transform: translateX(-45%) rotate(-2deg);
+  }
+  100% {
+    top: -10%;
+    transform: translateX(-50%) rotate(2deg);
+  }
+}
+
+@keyframes hueShift {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}

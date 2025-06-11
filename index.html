@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Birthday Countdown</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1 id="birthday-title">🎉 Happy Birthday! 🎉</h1>
+
+    <div class="countdown">
+      <div class="time-segment"><span id="years">0</span><p>Years</p></div>
+      <div class="time-segment"><span id="months">0</span><p>Months</p></div>
+      <div class="time-segment"><span id="weeks">0</span><p>Weeks</p></div>
+      <div class="time-segment"><span id="days">0</span><p>Days</p></div>
+      <div class="time-segment"><span id="hours">0</span><p>Hours</p></div>
+      <div class="time-segment"><span id="minutes">0</span><p>Minutes</p></div>
+      <div class="time-segment"><span id="seconds">0</span><p>Seconds</p></div>
+    </div>
+
+    <div class="cards">
+      <div class="card"><img src="D:\Documents\Desktop\NEEHARIKA\Birthday wishes\My friend\1.jpg" alt="Cute1"></div>
+      <div class="card"><img src="D:\Documents\Desktop\NEEHARIKA\Birthday wishes\My friend\2.jpg" alt="Cute2"></div>
+      <div class="card"><img src="D:\Documents\Desktop\NEEHARIKA\Birthday wishes\My friend\3.jpg" alt="Cute3"></div>
+      <div class="card"><img src="D:\Documents\Desktop\NEEHARIKA\Birthday wishes\My friend\4.jpg" alt="Cute4"></div>
+    </div>
+
+    <div class="reactions">
+      <button class="like" onclick="like()">👍 <span id="like-count">348</span></button>
+      <button class="dislike">👎 Dislike</button>
+    </div>
+
+    <!-- New Buttons -->
+    <div class="features">
+      <button onclick="toggleMusic()">🎵 Music</button>
+      <button onclick="toggleMode()">🌓 Toggle Mode</button>
+    </div>
+
+    <!-- Audio -->
+    <audio id="bg-music" loop>
+      <source src="https://www.bensound.com/bensound-music/bensound-sunny.mp3" type="audio/mp3">
+    </audio>
+
+    <!-- Balloons -->
+    <div class="balloons"></div>
+  </div>
+  <!-- Share + Animation Control -->
+<div class="extras">
+  <button onclick="showPopup()">🎂 Wish Message</button>
+  <button onclick="sharePage()">📤 Share</button>
+  <button onclick="toggleAnimation()">🎈 Toggle Animation</button>
+</div>
+
+<!-- Birthday Popup -->
+<div id="popup" class="popup">
+  <div class="popup-content">
+    <span onclick="closePopup()" class="close-btn">&times;</span>
+    <h2>🎉 Happy Birthday! 🎉</h2>
+    <p>Wishing you a day filled with love, joy, and happiness. 🎂🎈</p>
+  </div>
+</div>
+
+<!-- Confetti Canvas -->
+<canvas id="confetti-canvas"></canvas>
+ <!-- Daily Progress Bar -->
+<div class="progress-container">
+  <label>🎯 Today’s Progress</label>
+  <div class="progress-bar">
+    <div id="progress-fill"></div>
+  </div>
+</div>
+
+<!-- Send a Wish -->
+<div class="send-wish">
+  <button onclick="openWishBox()">💌 Send a Wish</button>
+  <div id="wish-box" class="wish-box hidden">
+    <textarea placeholder="Write your wish..."></textarea>
+    <button onclick="submitWish()">Send</button>
+  </div>
+</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
